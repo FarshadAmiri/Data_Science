@@ -35,7 +35,7 @@ def exp_moving_ave(x, y, beta):   # Exponentially weighted moving average
 
 
 ma_window_size = 10
-beta = 0.90
+EMA_beta = 0.90
 
 x, y = noisy_normal_scatter(x_range=(1,100), data_num=1000, sigma=20, h=35, mid=50, noise_strength= 3 )
 plt.scatter(x, y, marker= '.')
@@ -43,8 +43,8 @@ plt.scatter(x, y, marker= '.')
 x_ma, y_ma = moving_average(x,y , window_size= ma_window_size)
 plt.plot(x_ma,y_ma, color='red', label=f'MA (window size = {ma_window_size}')
 
-x_ema, y_ema = exp_moving_ave(x,y, beta= beta)
-plt.plot(x_ema,y_ema, color='k', label=f'EMA (Beta = {beta})')
+x_ema, y_ema = exp_moving_ave(x,y, beta= EMA_beta)
+plt.plot(x_ema,y_ema, color='k', label=f'EMA (Beta = {EMA_beta})')
 
 plt.legend()
 plt.show()
