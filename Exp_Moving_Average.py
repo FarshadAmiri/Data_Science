@@ -24,8 +24,7 @@ def moving_average(x,y, window_size):
     return x_ma, y_ma
 
 
-def exp_moving_ave(x, y, beta):
-    window_size = 1 / (1-beta)
+def exp_moving_ave(x, y, beta):   # Exponentially weighted moving average
     y_ema = np.zeros(shape=(y.shape[0]))
     y_ema[0] = y[0]
     for ii, value in enumerate(y):
